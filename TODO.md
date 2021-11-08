@@ -1,0 +1,1 @@
+faire la fonction qui handle barcode scanned 

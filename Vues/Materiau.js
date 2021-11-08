@@ -1,22 +1,23 @@
 
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class Acceuil extends React.Component  {
-    constructor(props) {
-        super(props);
-        barcode = this.barcode ;
-        packaging = 'Inconnu';
-    }
+  state = [
+    {barcode: route.params},
+    {packaging: 'Inconnue'}
+  ]
+  
+  fetcheur = (barcode) => {
+    fetch('https://world.openfoodfacts.org/api/v0/product/' + barcode + '.json')
+        .then(response => response.json())
+        .then(data => setState(packaging = data.packaging))
 
-    fetcheur = (barcode) => {
-        fetch('https://world.openfoodfacts.org/api/v0/product/' + barcode)
-            .then(response => response.json())
-            .then(data => setState(packaging = data.packaging)
-    }
+  }
+
   render() {
+    
     return (
       <View style={{flex: 1 }}>
         <View style={{flex: 1 , alignItems: 'center' , justifyContent: 'center'}}>
