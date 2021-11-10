@@ -14,6 +14,7 @@ export default function App() {
   }, []);
 
   const handleBarCodeScanned = ({ type, data }) => {
+    console.log("j'ai toruvé un code-barre");
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     // this.props.navigation.navigate('Materiau', data)

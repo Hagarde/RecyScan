@@ -20,7 +20,7 @@ export default class Acceuil extends React.Component  {
           <Button title='Scanner un produit ' onPress={()=> this._lets_scan()}/>
         </View>
         <View style={{flex: 1 , alignItems: 'center' , JustifyContent: 'center'}}>
-          <CardSilder  text1="Pensez à éteindre la lumière en partant d'une pièce ! Enculé de Joseph " text2="On devrait mettre des images comme sur les clopes sur les paquets de jambon, non ?">
+          <CardSilder  text1="Pensez à éteindre la lumière en partant d'une pièce !  " text2="On devrait mettre des images comme sur les clopes sur les paquets de jambon, non ?">
           </CardSilder>
         </View>
       </View>
