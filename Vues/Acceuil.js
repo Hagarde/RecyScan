@@ -8,7 +8,7 @@ import CardSilder from '../Component/CardSlider';
 export default class Acceuil extends React.Component  {
 
   _lets_scan = () => {
-    console.log('Vas sur la page scan  ');
+    console.log(' ========== Page de Scan ==========');
     this.props.navigation.navigate('Scan');
   }
   render() {
