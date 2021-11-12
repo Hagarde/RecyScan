@@ -25,8 +25,7 @@ export default class Scan extends React.Component {
     console.log('je trouvé')
     this.setState({scanned: true});
     this.setState({barcode: data});
-    this.props.navigation.navigate('Materiau',this.state.barcode)
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    this.props.navigation.navigate('Materiau',{ barcode: data})
   };
 
   render() {
