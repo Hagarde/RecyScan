@@ -1,7 +1,8 @@
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import * as React from 'react';
 
-export default class App extends React.Component {
+export default class Scan extends React.Component {
 
   constructor(props) {
     super(props);
