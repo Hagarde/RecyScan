@@ -8,16 +8,10 @@ export default class Materiau extends React.Component  {
   
   fetcheur = async (barcode) => {
 
-    let data = await fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {
-      method: 'GET',
-      headers: {
-                   'Accept': 'application/json',
-                   'Content-Type': 'application/json',
-      }})
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-    console.log(data);
+    fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json')
+            .then(response => response.json() )
+            .then(data => console.log(data) )
+            .catch(error => console.log(error));
   }
 
   render() { 
@@ -26,6 +20,6 @@ export default class Materiau extends React.Component  {
           <Text> Le code barre scanné est {this.props.navigation.state.params.barcode}</Text>
           <Button title='Découvrir les matériaux ! ' onPress={()=> this.fetcheur(this.barcode)}/>
         </View>
-    );
-  }
+      );
+    }
   }
