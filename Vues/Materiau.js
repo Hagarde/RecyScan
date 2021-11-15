@@ -6,12 +6,17 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class Materiau extends React.Component  {
   state = {barcode: 12,packaging: 'Inconnue'}
   
-  fetcheur = (barcode) => {
+  fetcheur = async (barcode) => {
 
-    fetch('https://world.openfoodfacts.org/api/v0/product/' + barcode + '.json')
+    let data = await fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {
+      method: 'POST',
+      headers: {
+                   'Accept': 'application/json',
+                   'Content-Type': 'application/json',
+      }})
         .then(response => response.json())
-        .then(data => setState(packaging = data.packaging))
-
+        .then(data => console.log(data))
+    console.log(data);
   }
 
   render() { 
