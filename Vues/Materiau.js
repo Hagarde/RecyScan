@@ -9,13 +9,14 @@ export default class Materiau extends React.Component  {
   fetcheur = async (barcode) => {
 
     let data = await fetch('https://world.openfoodfacts.org/api/v0/product/737628064502.json', {
-      method: 'POST',
+      method: 'GET',
       headers: {
                    'Accept': 'application/json',
                    'Content-Type': 'application/json',
       }})
         .then(response => response.json())
         .then(data => console.log(data))
+        .catch(err => console.error(err))
     console.log(data);
   }
 

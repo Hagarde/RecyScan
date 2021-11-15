@@ -5,7 +5,15 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "Application pour scanner des code barre et découvrir comment recycler les matériaux de l'emballage ",
+    "githubUrl": "https://github.com/Hagarde/RecyScan.git",
+    "android": {
+      "package": "io.expo.recyscan"
+    },
+    "ios": {
+      "bundleIdentifier": "io.expo.recyscan"
+    }
   },
   "name": "RecyScan"
 }
