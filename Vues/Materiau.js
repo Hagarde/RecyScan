@@ -32,18 +32,25 @@ export default class Materiau extends React.Component  {
       }
   }
 
+
+  _cparou = (avecquoi) => {
+    console.log(' ========== Cherchons les points de collecte de '+ avecquoi +' ==========');
+    this.props.navigation.navigate('Geolocalisation',{materiau : avecquoi });
+  }
+
+
   render() { 
     // Vue à rendre si on connait les matériaux du packaging 
     if (this.state.trouve) {
       return ( 
         <View style={ styles.container}>
           <Text> Nous avons trouvé que cet emballage contenais des traces de : </Text>
-          {(this.state.packaging.includes('Plastique')) && <Button title="Plastique" onPress={ ()=> rien = rien }/>}
-          {(this.state.packaging.includes('Metal')) && <Button title="Metal" onPress={ ()=> rien = rien }/>}
-          {(this.state.packaging.includes('Carton')) && <Button title="Carton" onPress={ ()=> rien = rien }/>}
-          {(this.state.packaging.includes('Brique')) && <Button title="Brique" onPress={ ()=> rien = rien }/>}
-          {(this.state.packaging.includes('Verre')) && <Button title="Verre" onPress={ ()=> rien = rien }/>}
-          {(this.state.packaging.includes('Aluminium')) && <Button title="Aluminium" onPress={ ()=> rien = rien }/>}
+          {(this.state.packaging.includes('Plastique')) && <Button title="Plastique" onPress={ ()=> this._cparou('Plastique') }/>}
+          {(this.state.packaging.includes('Metal')) && <Button title="Metal" onPress={ ()=> this._cparou('Metal') }/>}
+          {(this.state.packaging.includes('Carton')) && <Button title="Carton" onPress={ ()=> this._cparou('Carton') }/>}
+          {(this.state.packaging.includes('Brique')) && <Button title="Brique" onPress={ ()=> this._cparou('Brique') }/>}
+          {(this.state.packaging.includes('Verre')) && <Button title="Verre" onPress={ ()=> this._cparou('Verre') }/>}
+          {(this.state.packaging.includes('Aluminium')) && <Button title="Aluminium" onPress={ ()=> this._cparou('Aluminium') }/>}
         </View>
       )
     }
@@ -54,14 +61,14 @@ export default class Materiau extends React.Component  {
           <Text> Nos meilleurs ingénieurs n'ont pas pu déterminer la composition de cet emballage extraterrestres, veuillez sélectionner le matériau de l'emballage d'après vous : </Text>
           <View style={ styles.container }>
             <View style={ styles.container }>
-              <Button title='Plastique' onPress={() => rien = null} />  
-              <Button title='Carton' onPress={() => rien = null} />
-              <Button title='Métal' onPress={() => rien = null} />
+              <Button title='Plastique' onPress={ ()=> this._cparou('Plastique')} />  
+              <Button title='Carton' onPress={onPress= ()=> this._cparou('Carton')} />
+              <Button title='Métal' onPress={ ()=> this._cparou('Metal')} />
             </View>
             <View style={ styles.container }>
-              <Button title='Verre' onPress={() => rien = null} />  
-              <Button title='Brique (lait)' onPress={() => rien = null} />
-              <Button title='Aluminium' onPress={() => rien = null} />
+              <Button title='Verre' onPress={onPress= () => this._cparou('Verre')} />  
+              <Button title='Brique (lait)' onPress={onPress= ()=> this._cparou('Brique')} />
+              <Button title='Aluminium' onPress={ ()=> this._cparou('Aluminium') } />
             </View>
           </View>
         </View>
