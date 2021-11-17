@@ -1,15 +1,3 @@
-import axios from 'axios';
- 
-const URL = "https://world.openfoodfacts.org/api/v0/product/"
-
-
-export const fetchData = async (barcode) => {
-    console.log(URL + barcode + '.json');
-    const response = await axios.get(URL + barcode + '.json').then(res => res = [res.data.product.packaging,res.data.product.packagings,res.data.product.packaging_tags]);
-    return response;
-  }
-
-
 export function traducteur (aTraduire) {
     const aTraduir = aTraduire.toLowerCase();
     if (aTraduir =='plastique') {

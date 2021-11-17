@@ -22,7 +22,7 @@ export default class Scan extends React.Component {
   }
 
   handleBarCodeScanned = ({ type, data }) => {
-    console.log('je trouvé')
+    console.log('============== Materiau de ' + data + '==============')
     this.setState({scanned: true});
     this.setState({barcode: data});
     this.props.navigation.navigate('Materiau',{ barcode: data})
