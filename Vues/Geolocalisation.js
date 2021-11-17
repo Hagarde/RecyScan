@@ -1,40 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { Platform, Text, View, StyleSheet } from 'react-native';
 import * as Location from 'expo-location';
+import React from 'react';
+import { Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function Geolocalisation() {
-  const [location, setLocation] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
+export default class Geolocation extends React.Component {
+    state = {
+        materiau : null,
+        localisation : null,
+        errorMessage : null,
+    }
 
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setErrorMsg('Permission to access location was denied');
-        return;
-      }
+    componentDidMount = async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        let localisation = await Location.getCurrentPositionAsync({});
+        this.setState({location: localisation});
+        console.log(localisation);
+    }
 
-      let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
-    })();
-  }, []);
+    render () {
+        return (
+            <View style={styles.container}>
+                <Text> {this.state.localisation}</Text>
+            </View>
+        )
 
-  let text = 'Waiting..';
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    text = JSON.stringify(location);
-  }
-
-  return (
-    <View >
-      <Text >{location}</Text>
-    </View>
-  );
+    }
 }
 
-const styles = StyleSheet.create({ 
-  container:{ 
-
+const styles = StyleSheet.create({
+  container: {
+    flex : 1,
+    justifyContent: 'center',
+    alignItems: 'center' 
   }
- });
+})
