@@ -7,6 +7,16 @@ platform :ios, '12.0'
 require 'json'
 podfile_properties = JSON.parse(File.read('./Podfile.properties.json')) rescue {}
 
+pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+# react-native-maps dependencies
+pod 'react-native-maps', path: '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # Remove this line if you don't want to support GoogleMaps on iOS
+pod 'GoogleMaps'  # Remove this line if you don't want to support GoogleMaps on iOS
+pod 'Google-Maps-iOS-Utils' # Remove this line if you don't want to support GoogleMaps on iOS
+
+
+
 target 'RecyScan' do
   use_expo_modules!
   config = use_native_modules!

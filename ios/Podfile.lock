@@ -29,7 +29,7 @@ PODS:
     - EXJSONUtils
   - EXPermissions (13.0.3):
     - ExpoModulesCore
-  - Expo (43.0.3):
+  - Expo (43.0.2):
     - ExpoModulesCore
   - ExpoModulesCore (0.4.8):
     - React-Core
@@ -320,7 +320,7 @@ PODS:
     - React
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNReanimated (2.2.4):
+  - RNReanimated (2.2.3):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -549,7 +549,7 @@ SPEC CHECKSUMS:
   EXLocation: 192eaee761c159d1479111a0ced3bab7ad8475a3
   EXManifests: 50e42e01335df4e54109dee7be5a91bfd37347db
   EXPermissions: 7696f4c16e89981f84c04d96327f7e1e592373c0
-  Expo: 5316c3ecdc34eb0cad340d01dc8beec97c7e879e
+  Expo: b66c9661cf2514b4adf67b8367178e8ed3eb9801
   ExpoModulesCore: a9a9bf32b2da35cd9b7299c80790c03a91ac7d15
   EXSplashScreen: 57f329dbf25c5c12800feed79068a056453dc772
   EXStructuredHeaders: 873e7f329c2f6279c1b1e0229df59c9861560b53
@@ -586,12 +586,12 @@ SPEC CHECKSUMS:
   ReactCommon: 8fea6422328e2fc093e25c9fac67adbcf0f04fb4
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNReanimated: 024eff8202342abf4b24e11575a16afc441dabfe
+  RNReanimated: 64c38d47ffcc29c97fc1d8cfde9e8a73d7be7cc8
   RNScreens: 6e1ea5787989f92b0671049b808aef64fa1ef98c
   UMTaskManagerInterface: 5654c50e68af11b19b9d05452bacf23d19b3f30f
   Yoga: e6ecf3fa25af9d4c87e94ad7d5d292eedef49749
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 281e0a593d882b1f9a6a6b30516557133aeb76bb
+PODFILE CHECKSUM: 797d92922578017a167f7c8264da1764376a6ce5
 
 COCOAPODS: 1.11.2

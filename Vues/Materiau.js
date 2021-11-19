@@ -11,8 +11,9 @@ export default class Materiau extends React.Component  {
 
   async componentDidMount() {
     const URL = "https://world.openfoodfacts.org/api/v0/product/"
-    console.log(' => requête envoyée à : ' + URL + barcode + '.json');
     const barcode = this.state.barcode ;
+    console.log(' => requête envoyée à : ' + URL + this.props.navigation.state.params.barcode + '.json');
+
     const response = await axios.get(URL + barcode + '.json').then(res => res = [res.data.product.packaging,res.data.product.packaging_tags]);
     const all_data = response[0].concat(response[1]).split(',')
     console.log('Les matériaux détectés par notre IA sont les suivant : ');
@@ -41,7 +42,7 @@ export default class Materiau extends React.Component  {
 
   render() { 
     // Vue à rendre si on connait les matériaux du packaging 
-    if (this.state.trouve) {
+    if (this.state.trouve & !(!Array.isArray(this.state.packaging) || !this.state.packaging.length) ) {
       return ( 
         <View style={ styles.container}>
           <Text> Nous avons trouvé que cet emballage contenais des traces de : </Text>
