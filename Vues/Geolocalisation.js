@@ -6,15 +6,8 @@ import MapView, {Marker} from 'react-native-maps';
 export default class Geolocation extends React.Component {
     state = {
         materiau : null,
-        localisation : {latitude : 43.3416027, longitude : 5.4385378},
+        localisation : {latitude : this.props.navigation.state.params.latitude, longitude : this.props.navigation.state.params.longitude},
         errorMessage : null,
-    }
-
-    componentDidMount = async () => {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        let localisation = await Location.getCurrentPositionAsync({});
-        this.setState({location: localisation});
-        console.log(localisation);
     }
 
     render () {
